@@ -12,5 +12,3 @@ spec:
   selector:
     app: rabbitmq
     tier: rabbitmq
-  type: LoadBalancer
-  clusterIP: 10.0.4.1
