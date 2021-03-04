@@ -12,4 +12,4 @@ spec:
   selector:
     app: rabbitmq
     tier: rabbitmq
-  clusterIP: 10.0.171.239
+  clusterIP: 10.96.1.1
