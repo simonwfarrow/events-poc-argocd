@@ -25,7 +25,7 @@ spec:
         - containerPort: 5671
         env:
         - name: RABBITMQ_NODENAME
-          value: rabbitmq-server@poc-cluster
+          value: rabbitmq-server@localhost
         - name: RABBITMQ_DEFAULT_USER
           valueFrom:
             secretKeyRef:
