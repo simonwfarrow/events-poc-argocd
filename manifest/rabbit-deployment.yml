@@ -23,4 +23,18 @@ spec:
         - containerPort: 15672
         - containerPort: 5672
         - containerPort: 5671
+        env: 
+        - name: RABBITMQ_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-credentials
+              key: admin_username
+        - name: RABBITMQ_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-credentials
+              key: admin_password
+
+
+
 
