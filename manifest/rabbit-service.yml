@@ -7,8 +7,12 @@ metadata:
     tier: rabbitmq
 spec:
   ports:
-  - port: 15672
+  - name: management-ui
+    port: 15672
     targetPort: 15672
+  - name: queue-traffic
+    port: 5672
+    targetPort: 5672
   selector:
     app: rabbitmq
     tier: rabbitmq
