@@ -23,7 +23,8 @@ spec:
         - containerPort: 15672
         - containerPort: 5672
         - containerPort: 5671
-        env: 
+        hostname: rabbitmq.server
+        env:
         - name: RABBITMQ_DEFAULT_USER
           valueFrom:
             secretKeyRef:
