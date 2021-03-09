@@ -1,20 +1,19 @@
-apiVersion: apps/v1 
-kind: Deployment
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
-  name: rabbitmq
+  name: rabbitmq-statefulset
   labels:
     app: rabbitmq
 spec:
   selector:
     matchLabels:
       app: rabbitmq
-      tier: rabbitmq
-  replicas: 1
+  serviceName: rabbitmq-service
+  replicas: 1 
   template:
     metadata:
       labels:
         app: rabbitmq
-        tier: rabbitmq
     spec:
       containers:
       - name: rabbitmq
@@ -36,7 +35,15 @@ spec:
             secretKeyRef:
               name: rabbitmq-credentials
               key: admin_password
-
-
-
+        volumeMounts:
+        - name: rabbit-data
+          mountPath: /var/lib/rabbitmq
+  volumeClaimTemplates:
+  - metadata:
+      name: rabbitmq-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
 
