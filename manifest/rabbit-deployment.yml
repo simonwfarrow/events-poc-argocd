@@ -15,6 +15,8 @@ spec:
       labels:
         app: rabbitmq
         tier: rabbitmq
+      annotations:
+        "pod.beta.kubernetes.io/hostname": rabbit-server
     spec:
       containers:
       - name: rabbitmq
@@ -23,7 +25,6 @@ spec:
         - containerPort: 15672
         - containerPort: 5672
         - containerPort: 5671
-        hostname: rabbitmq.server
         env:
         - name: RABBITMQ_DEFAULT_USER
           valueFrom:
