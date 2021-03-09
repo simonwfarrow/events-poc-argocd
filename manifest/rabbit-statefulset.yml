@@ -36,7 +36,7 @@ spec:
               name: rabbitmq-credentials
               key: admin_password
         volumeMounts:
-        - name: rabbit-data
+        - name: rabbitmq-data
           mountPath: /var/lib/rabbitmq
   volumeClaimTemplates:
   - metadata:
