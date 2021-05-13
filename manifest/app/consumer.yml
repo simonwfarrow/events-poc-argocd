@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: events-poc
+  labels:
+    app: events-poc
+spec:
+  selector:
+    matchLabels:
+      app: events-poc
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: events-poc
+    spec:
+      containers:
+      - name: events-poc
+        image: rhorv/events-poc:latest
+      imagePullSecrets:
+      - name: regcred
