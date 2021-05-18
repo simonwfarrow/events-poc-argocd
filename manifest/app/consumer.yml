@@ -15,7 +15,7 @@ spec:
         app: events-poc
     spec:
       containers:
-      - name: events-poc
-        image: rhorv/events-poc:latest
+        - name: events-poc
+          image: rhorv/events-poc:8f2468bc5843c60611704850b7df9db06fa3410b
       imagePullSecrets:
-      - name: regcred
+        - name: regcred
