@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: events-poc
-          image: rhorv/events-poc:e8bd27ee9af0c4fb0f2afd4fb86b17f1bc3d9aee
+          image: simonwfarrow/events-poc:c4894a9ae4f3bb7e583a6ce53eb11c241c225eee
       imagePullSecrets:
         - name: regcred
